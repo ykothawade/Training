@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
 import com.training.pom.LoginPOM;
+import com.training.pom.DeletePOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
@@ -20,6 +21,7 @@ public class LoginTests {
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
+	private DeletePOM deletePOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -34,6 +36,7 @@ public class LoginTests {
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
+		deletePOM = new DeletePOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
