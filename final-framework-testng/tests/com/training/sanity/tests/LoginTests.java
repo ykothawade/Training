@@ -48,11 +48,24 @@ public class LoginTests {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
+	
+	/*@Test
 	public void validLoginTest() {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
 		screenShot.captureScreenShot("First");
-	}
-}
+	}*/
+	
+	Boolean flag = loginPOM.LoginUser("admin","admin@123");
+                
+                if(flag)
+                {
+                        System.out.println("login successful");
+                }
+                else
+                {
+                        System.out.println("login unsuccessful");
+                }
+}	
+	
